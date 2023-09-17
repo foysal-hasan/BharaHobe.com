@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;900&family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500;1,600;1,700&family=Satisfy&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+    /* font-family: 'Satisfy', cursive; */
+    font-smooth: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+header {
+    background-image: url('../images/banner.jpg');
+    width: 100vw;
+    min-height: 110vh;
+    /* background-position: 100% 100%; */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logo {
+    font-family: 'Satisfy', cursive;
+}
+
+.bar {
+    width: 40px;
+    height: 2px;
+    background: #000;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.bar:last-child {
+    margin-top: 8px;
+    width: 25px;
+    transition: width .4s ease-in-out;
+    cursor: pointer;
+}
+
+.left:hover,
+.quick-links {
+    cursor: pointer;
+}
+
+.left:hover>.bar:last-child,
+.quick-links:hover>.bar:last-child {
+    width: 40px;
+}
+
+option {
+    /* font-family: 'Roboto Mono', monospace; */
+    font-weight: 500;
+    font-family: 'Satisfy', cursive;
+
+}
+
+.search-container .active {
+    margin-bottom: -3px;
+    font-weight: bold;
+}
+
+.sidebar-menu {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.bar {
+    width: 40px;
+    height: 2px;
+    background: #000;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.quick-links .bar {
+    background-color: white;
+}
+
+.icon-rotate {
+    transform: rotate(-45deg);
+}
+
+footer {
+    background-color: #181A20;
+}
+
+footer .subscribe {
+    background-color: #2A2C31;
+}
+
+.bg-gray-custom {
+    background-color: #2A2C31;
+}
+
+.bg-gray-custom-1 {
+    background-color: #F7F7F7;
+}
+
+footer .subscribe input:focus {
+    border: none;
+    outline: none;
+}
+
+/* nav {} */
+
+@media screen and (width <=300px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .mobile {
+        flex-direction: column;
+    }
+
+
+    .mobile .center {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
