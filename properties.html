@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BharaHobe.com</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="./js/tailwindcss.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                },
+                screens: {
+                    'sm': '640px',
+                    // => @media (min-width: 640px) { ... }
+
+                    'md': '768px',
+                    // => @media (min-width: 768px) { ... }
+
+                    'lg': '1102px',
+                    // => @media (min-width: 1024px) { ... }
+
+                    'xl': '1200px',
+                    // => @media (min-width: 1280px) { ... }
+
+                    '2xl': '1536px',
+                    // => @media (min-width: 1536px) { ... }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- <header> -->
+    <nav class="border-b border-b-slate-700 bg-[#181A20]">
+        <div class="mobile bg-white flex justify-between p-4 flex-wrap lg:hidden overflow-hidden">
+            <div class="left flex justify-center  flex-col  w-10" id="toggle-bar">
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <div class="center ">
+                <a href="#" class="flex items-center ">
+                    <img src="./images/logo.svg.png" alt="" class="bg-red-800">
+                    <span class="text-lg font-bold ml-2 logo hover:text-red-400">BharaHobe.com</span>
+                </a>
+
+            </div>
+            <div class="right flex items-center font-2xl cursor-pointer	">
+                <!-- <img src="./images/circle-user-regular.svg" width="30px" height="30px" alt=""> -->
+                <i class="fa-regular fa-circle-user mr-2 fa-2x"></i>
+            </div>
+        </div>
+
+        <div class="absolute left-0 right-0 top-0 bottom-0 sidebar-menu w-0 overflow-hidden " id="layer"></div>
+        <aside class="bg-white w-0 overflow-hidden h-full ease-in-out duration-300 absolute left-0 top-0" id="menu">
+            <h3 class="bg-red-200 font-semibold text-center py-3">Menu</h3>
+            <ul>
+                <li class=" hover:bg-red-300 font-semibold pl-3 py-3"><a href="#">Home</a></li>
+                <li class=" hover:bg-red-300 font-semibold pl-3 py-3"><a href="#">About</a></li>
+                <li class=" hover:bg-red-300 font-semibold pl-3 py-3"><a href="#">Blog</a></li>
+                <!-- <li class=" hover:bg-red-300 font-semibold pl-3 py-3"><a href="#">Contact</a></li> -->
+                <li class=" hover:bg-red-300 font-semibold pl-3 py-3"><a href="#">Add Property</a></li>
+
+            </ul>
+        </aside>
+
+        <div class="bg-transprent hidden lg:flex p-3 items-center w-10/12 mx-auto">
+            <a href="#" class="flex items-center text-white">
+                <img src="./images/logo.svg-1.png" alt="" class="rounded-full">
+                <span class="text-lg font-bold ml-2 hover:text-red-400 logo">BharaHobe.com</span>
+            </a>
+            <ul class="text-white flex  ">
+                <li><a href="#"
+                        class=" hover:bg-gray-800 font-semibold rounded-3xl px-6 py-2 ml-5 hover:text-red-400">Home</a>
+                </li>
+                <li><a href="#"
+                        class=" hover:bg-gray-800 font-semibold rounded-3xl px-6 py-2 hover:text-red-400">About</a>
+                </li>
+                <li><a href="#"
+                        class=" hover:bg-gray-800 font-semibold rounded-3xl px-6 py-2 hover:text-red-400">Blog</a>
+                </li>
+                <!-- <li><a href="#"
+                            class=" hover:bg-gray-800 font-semibold rounded-3xl px-6 py-2 hover:text-red-400">Contact</a>
+                    </li> -->
+                <!-- <li><a href="#" class=" hover:bg-gray-800 font-semibold rounded-3xl px-4 py-1">Add Property</a></li> -->
+
+            </ul>
+            <div class="flex text-white ml-auto">
+                <button class="flex items-center mr-5 hover:text-red-400">
+                    <i class="fa-regular fa-circle-user mr-2"></i>
+                    Login/Register
+                </button>
+                <button class="border px-4 py-2 rounded-3xl hover:bg-red-400 hover:border-red-400 duration-300">Add
+                    Property <i class="fa-solid fa-arrow-right icon-rotate"></i> </button>
+                <button class="quick-links flex justify-center items-end text-right ml-5 flex-col  w-10"
+                    id="toggle-bar1">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+        <!-- <div class="absolute left-0 right-0 top-0 bottom-0 sidebar-menu w-0 overflow-hidden " id="layer"></div> -->
+        <aside class="bg-white w-0 overflow-hidden h-full ease-in-out duration-300 absolute right-0 top-0"
+            id="quick-links">
+            <div class="flex  p-3 py-5 border-b items-center justify-between">
+                <h3 class="font-semibold ">Quick Links</h3>
+                <button id='close'
+                    class="rounded-full bg-gray-300 w-10 h-10 leading-10 hover:bg-red-400 ease-in-out duration-300"><span
+                        class="text-3xl">&times;
+                    </span></button>
+            </div>
+
+            <ul>
+                <li class=" hover:bg-red-100  pl-3 py-3"><a href="#">Apartments</a></li>
+                <li class=" hover:bg-red-100  pl-3 py-3"><a href="#">Bungalow</a></li>
+                <li class=" hover:bg-red-100  pl-3 py-3"><a href="#">Houses</a></li>
+                <li class=" hover:bg-red-100  pl-3 py-3"><a href="#">Loft</a></li>
+                <li class=" hover:bg-red-100  pl-3 py-3"><a href="#">Office </a></li>
+                <li class=" hover:bg-red-100  pl-3 py-3"><a href="#">Townhome</a></li>
+                <li class=" hover:bg-red-100  pl-3 py-3"><a href="#">Villa</a></li>
+
+            </ul>
+            <div class="border-t border-b flex p-6 text-sm mt-24">
+                <div class="mr-10">
+                    <span class="block text-gray-500">Total Free Customer Care</span>
+                    <span class="block font-bold mt-2">+(088) 123 456 789</span>
+                </div>
+                <div class="mr-10">
+                    <span class="block text-gray-500">
+                        Live Support?
+                    </span>
+                    <span class="block font-bold mt-2">hi@homez.com</span>
+                </div>
+            </div>
+            <div class="flex justify-between w-8/12 items-center p-6">
+                <span class="font-bold">Follow us: </span>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </aside>
+    </nav>
+
+
+    <!-- </header> -->
+
+    <section class="w-10/12 mx-auto">
+        <h1 class="mt-10 text-xl">Residential Properties for Sale in Bangladesh
+        </h1>
+        <div class="border-2 my-10 p-10 pb-0">
+            <div class="flex justify-between">
+                <p><a href="" class="text-cyan-600">Dhaka</a>(8,991)</p>
+                <p><a href="" class="text-cyan-600">Chattogram</a>(1,092)</p>
+                <p><a href="" class="text-cyan-600">Narayanganj City</a>(442)</p>
+                <p><a href="" class="text-cyan-600">Gazipur</a> (205)</p>
+            </div>
+            <a href="" class="block text-center mt-5 text-green-700 font-bold mb-5">View ALL Location <i
+                    class="fa-solid fa-arrow-down"></i></a>
+        </div>
+        <main class="flex">
+            <div class="w-8/12">
+                <div class="flex text-[14px]">
+                    <div class="flex">
+                        <p>Occupancy Status:</p>
+                        <div>
+                            <a href="">Any</a>
+                            <a href="">Vacant</a>
+                            <a href="">Occupied</a>
+                        </div>
+                    </div>
+                    <!-- <div> -->
+                    <select name="city" id="city" class="ml-5 mr-3">
+                        <option selected value="popular">Popular</option>
+                        <option value="newest">Newest</option>
+                        <option value="lowest_price">Lowest Price</option>
+                        <option value="highest_price">Highest Price</option>
+                    </select>
+                    <input type="checkbox" name="active" id="active">
+                    <label for="active">Active listings</label>
+                    <p><i class="fa-solid fa-list ml-3"></i></p>
+                    <p><i class="fa-solid fa-table ml-3"></i></p>
+
+                    <!-- </div> -->
+                </div>
+
+                <div class="mt-5">
+                    <a href="/property.html">
+                        <article class="rounded-2xl h-[250px] overflow-hidden flex border-2 mr-5 mb-5">
+                            <img src=" ./images/blog1.jpg" class="w-1/2" alt="property">
+                            <div class="w-1/2 pl-3">
+                                <h3 class="text-xl mt-4">BDT 38 Thousand</h3>
+                                <div class="flex text-[14px] my-3">
+                                    <p class="pr-1 border-r-2 border-slate-700">Apartment</p>
+                                    <p class="px-2"><i class="fa-solid fa-bed"></i> 3</p>
+                                    <p class="pr-1 mr-2 border-r-2 border-slate-700"><i class="fa-solid fa-bath"></i> 3
+                                    </p>
+                                    <p>Area: 1,800 sqft</p>
+                                </div>
+                                <h2 class="line-clamp-1 text-green-700">A Well-featured Rental 1890 Sq Ft Residential
+                                    Property Is Ready For
+                                    You To Own At Bashundhara R-A
+                                </h2>
+                                <p class="text-sm text-gray-700 my-2"><i class="fa-solid fa-location-dot"></i> Block A,
+                                    Bashundhara R-A, Dhaka
+                                </p>
+                                <div class="flex mt-10">
+                                    <button class="text-green-700 bg-gray-300 py-2 px-2 mr-2 rounded"><i
+                                            class="fa-solid fa-phone mr-2"></i>Call</button>
+                                    <button class="text-red-700 px-2 mr-2 rounded bg-gray-300"><i
+                                            class="fa-solid fa-envelope mr-2"></i>Email</button>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+
+                    <a href="/property.html">
+                        <article class="rounded-2xl h-[250px] overflow-hidden flex border-2 mr-5 mb-5">
+                            <img src=" ./images/blog2.jpg" class="w-1/2" alt="property">
+                            <div class="w-1/2 pl-3">
+                                <h3 class="text-xl mt-4">BDT 38 Thousand</h3>
+                                <div class="flex text-[14px] my-3">
+                                    <p class="pr-1 border-r-2 border-slate-700">Apartment</p>
+                                    <p class="px-2"><i class="fa-solid fa-bed"></i> 3</p>
+                                    <p class="pr-1 mr-2 border-r-2 border-slate-700"><i class="fa-solid fa-bath"></i> 3
+                                    </p>
+                                    <p>Area: 1,800 sqft</p>
+                                </div>
+                                <h2 class="line-clamp-1 text-green-700">A Well-featured Rental 1890 Sq Ft Residential
+                                    Property Is Ready For
+                                    You To Own At Bashundhara R-A
+                                </h2>
+                                <p class="text-sm text-gray-700 my-2"><i class="fa-solid fa-location-dot"></i> Block A,
+                                    Bashundhara R-A, Dhaka
+                                </p>
+                                <div class="flex mt-10">
+                                    <button class="text-green-700 bg-gray-300 py-2 px-2 mr-2 rounded"><i
+                                            class="fa-solid fa-phone mr-2"></i>Call</button>
+                                    <button class="text-red-700 px-2 mr-2 rounded bg-gray-300"><i
+                                            class="fa-solid fa-envelope mr-2"></i>Email</button>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+
+
+                    <a href="/property.html">
+                        <article class="rounded-2xl h-[250px] overflow-hidden flex border-2 mr-5 mb-5">
+                            <img src=" ./images/blog3.jpg" class="w-1/2" alt="property">
+                            <div class="w-1/2 pl-3">
+                                <h3 class="text-xl mt-4">BDT 38 Thousand</h3>
+                                <div class="flex text-[14px] my-3">
+                                    <p class="pr-1 border-r-2 border-slate-700">Apartment</p>
+                                    <p class="px-2"><i class="fa-solid fa-bed"></i> 3</p>
+                                    <p class="pr-1 mr-2 border-r-2 border-slate-700"><i class="fa-solid fa-bath"></i> 3
+                                    </p>
+                                    <p>Area: 1,800 sqft</p>
+                                </div>
+                                <h2 class="line-clamp-1 text-green-700">A Well-featured Rental 1890 Sq Ft Residential
+                                    Property Is Ready For
+                                    You To Own At Bashundhara R-A
+                                </h2>
+                                <p class="text-sm text-gray-700 my-2"><i class="fa-solid fa-location-dot"></i> Block A,
+                                    Bashundhara R-A, Dhaka
+                                </p>
+                                <div class="flex mt-10">
+                                    <button class="text-green-700 bg-gray-300 py-2 px-2 mr-2 rounded"><i
+                                            class="fa-solid fa-phone mr-2"></i>Call</button>
+                                    <button class="text-red-700 px-2 mr-2 rounded bg-gray-300"><i
+                                            class="fa-solid fa-envelope mr-2"></i>Email</button>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+
+                    <a href="/property.html">
+                        <article class="rounded-2xl h-[250px] overflow-hidden flex border-2 mr-5 mb-5">
+                            <img src=" ./images/blog4.jpg" class="w-1/2" alt="property">
+                            <div class="w-1/2 pl-3">
+                                <h3 class="text-xl mt-4">BDT 38 Thousand</h3>
+                                <div class="flex text-[14px] my-3">
+                                    <p class="pr-1 border-r-2 border-slate-700">Apartment</p>
+                                    <p class="px-2"><i class="fa-solid fa-bed"></i> 3</p>
+                                    <p class="pr-1 mr-2 border-r-2 border-slate-700"><i class="fa-solid fa-bath"></i> 3
+                                    </p>
+                                    <p>Area: 1,800 sqft</p>
+                                </div>
+                                <h2 class="line-clamp-1 text-green-700">A Well-featured Rental 1890 Sq Ft Residential
+                                    Property Is Ready For
+                                    You To Own At Bashundhara R-A
+                                </h2>
+                                <p class="text-sm text-gray-700 my-2"><i class="fa-solid fa-location-dot"></i> Block A,
+                                    Bashundhara R-A, Dhaka
+                                </p>
+                                <div class="flex mt-10">
+                                    <button class="text-green-700 bg-gray-300 py-2 px-2 mr-2 rounded"><i
+                                            class="fa-solid fa-phone mr-2"></i>Call</button>
+                                    <button class="text-red-700 px-2 mr-2 rounded bg-gray-300"><i
+                                            class="fa-solid fa-envelope mr-2"></i>Email</button>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+
+                    <a href="/property.html">
+                        <article class="rounded-2xl h-[250px] overflow-hidden flex border-2 mr-5 mb-5">
+                            <img src=" ./images/blog5.jpg" class="w-1/2" alt="property">
+                            <div class="w-1/2 pl-3">
+                                <h3 class="text-xl mt-4">BDT 38 Thousand</h3>
+                                <div class="flex text-[14px] my-3">
+                                    <p class="pr-1 border-r-2 border-slate-700">Apartment</p>
+                                    <p class="px-2"><i class="fa-solid fa-bed"></i> 3</p>
+                                    <p class="pr-1 mr-2 border-r-2 border-slate-700"><i class="fa-solid fa-bath"></i> 3
+                                    </p>
+                                    <p>Area: 1,800 sqft</p>
+                                </div>
+                                <h2 class="line-clamp-1 text-green-700">A Well-featured Rental 1890 Sq Ft Residential
+                                    Property Is Ready For
+                                    You To Own At Bashundhara R-A
+                                </h2>
+                                <p class="text-sm text-gray-700 my-2"><i class="fa-solid fa-location-dot"></i> Block A,
+                                    Bashundhara R-A, Dhaka
+                                </p>
+                                <div class="flex mt-10">
+                                    <button class="text-green-700 bg-gray-300 py-2 px-2 mr-2 rounded"><i
+                                            class="fa-solid fa-phone mr-2"></i>Call</button>
+                                    <button class="text-red-700 px-2 mr-2 rounded bg-gray-300"><i
+                                            class="fa-solid fa-envelope mr-2"></i>Email</button>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+                    <div class="text-center mb-10">
+                        <a href="" class="inline-block w-[40px] h-[40px]  leading-[40px]  rounded-full"><i
+                                class="fa-solid fa-arrow-left text-gray-400"></i></a>
+                        <a href=""
+                            class="inline-block w-[40px] h-[40px] text-white leading-[40px] bg-red-500 rounded-full">1</a>
+                        <a href="" class="inline-block w-[40px] h-[40px]  leading-[40px]  rounded-full">2</a>
+                        <a href="" class="inline-block w-[40px] h-[40px]  leading-[40px]  rounded-full"><i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="w-4/12">
+                <button
+                    class="py-3 px-2 border-2 border-red-400 text-red-400 hover:bg-red-400 hover:text-white ease-in-out duration-300 rounded">Residential
+                    Properties For Rent</button>
+                <h2 class="text-xl mt-8 bg-gray-300 rounded px-1 py-2"> Recommended searches</h2>
+                <a href=""
+                    class="block text-[14px] text-gray-500 my-2 hover:underline decoration-2 hover:text-red-400">1
+                    Bedroom
+                    Properties for sale in Bangladesh</a>
+                <a href=""
+                    class="block text-[14px] text-gray-500 my-2 hover:underline decoration-2 hover:text-red-400">2
+                    Bedroom
+                    Properties for sale in Bangladesh</a>
+                <a href=""
+                    class="block text-[14px] text-gray-500 my-2 hover:underline decoration-2 hover:text-red-400">3
+                    Bedroom
+                    Properties for sale in Bangladesh</a>
+                <a href=""
+                    class="block text-[14px] text-gray-500 my-2 hover:underline decoration-2 hover:text-red-400">4
+                    Bedroom
+                    Properties for sale in Bangladesh</a>
+                <a href=""
+                    class="block text-[14px] text-gray-500 my-2 hover:underline decoration-2 hover:text-red-400">5
+                    Bedroom
+                    Properties for sale in Bangladesh</a>
+                <a href="" class="block  mt-1 text-green-700 text-sm font-bold mb-5">View More <i
+                        class="fa-solid fa-arrow-down"></i></a>
+
+                <h2 class="text-xl mt-8 bg-gray-300 rounded px-1 py-2">Useful links</h2>
+
+                <a href=""
+                    class="block text-[14px] text-gray-500 my-2 hover:underline decoration-2 hover:text-red-400">5
+                    Properties for rent in Bangladesh</a>
+            </div>
+        </main>
+    </section>
+
+
+
+    <footer class="text-white px-10 pt-5">
+        <div class="md:flex md:flex-wrap py-12">
+            <div class="left-footer w-1/2 pr-10 ">
+                <div class="logo flex items-center">
+                    <img src="./images/logo.svg-1.png" alt="logo" class="rounded-full">
+                    <span class="ml-3 logo">BharaHobe.com</span>
+                </div>
+                <div class="flex gap-16 py-5">
+                    <div>
+                        <span class="block text-gray-300 text-sm mb-2">Total Free Customer Care</span>
+                        <span class="block text-sm	font-bold"> +(088) 123 456 789</span>
+                    </div>
+                    <div>
+                        <span class="block text-gray-300 text-sm mb-2">Live Support?</span>
+                        <span class="block text-sm font-bold">hi@homez.com</span>
+                    </div>
+                </div>
+                <h3 class="mt-5">Apps</h3>
+                <div class="flex my-5">
+                    <a href="#" class="flex items-center bg-gray-custom px-2 py-3 rounded-lg sm:mr-5">
+                        <span class="block ml-3 w-10 text-2xl"><i class="fa-brands fa-apple"></i></span>
+                        <div>
+                            <span class="text-sm">Download on the</span>
+                            <h6 class="font-bold text-sm">Apple Store</h6>
+                        </div>
+                    </a>
+                    <a href="#" class="flex items-center bg-gray-custom px-2 py-3 rounded-lg">
+                        <span class="block  ml-3  w-10 text-2xl"><i class="fa-brands fa-google-play"></i></span>
+                        <div>
+                            <span class="text-sm">Download on the</span>
+                            <h6 class="font-bold text-sm">Apple Store</h6>
+                        </div>
+                    </a>
+                </div>
+                <h3 class="mb-2 mt-10">Follow us on social media</h3>
+                <div class="flex justify-between w-36 items-center text-slate-400">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+
+
+            <div class="right-footer w-1/2 md:pl-10">
+                <h3 class="text-sm font-bold mb-5">Keep Yourself Up to Date</h3>
+                <div class="bg-gray-300 subscribe rounded-lg mb-10">
+                    <input type="text" placeholder="Your Email" class="bg-transparent px-5 py-4 w-9/12">
+                    <button class="pl-3 sm:pb-0 pb-3 ">Subscribe</button>
+                </div>
+                <div class="md:flex md:justify-between flex-wrap">
+                    <div>
+                        <h3 class="mt-5 text-lg font-bold">Popular Search</h3>
+                        <a href="" class="text-gray-500 block mt-4 hover:text-white hover:underline text-sm">Apartment
+                            for
+                            Sale</a>
+                        <a href="" class="text-gray-500 block mt-4 hover:text-white hover:underline text-sm">Apartment
+                            for
+                            Rent</a>
+                        <a href="" class="text-gray-500 block mt-4 hover:text-white hover:underline text-sm">Offices for
+                            Sale</a>
+                        <a href="" class="text-gray-500 block mt-4 hover:text-white hover:underline text-sm">Offices for
+                            Rent</a>
+                    </div>
+                    <div>
+                        <h3 class="mt-5 text-lg font-bold">Quick Links</h3>
+                        <a href="" class="text-gray-500 block mt-4 hover:text-white hover:underline text-sm">Terms
+                            of
+                            Use</a>
+                        <a href="" class="text-gray-500 block mt-4 hover:text-white hover:underline text-sm">Privacy
+                            Policy</a>
+                        <a href="" class="text-gray-500 block mt-4 hover:text-white hover:underline text-sm">Pricing
+                            Plans</a>
+                        <a href="" class="text-gray-500 block mt-4 hover:text-white hover:underline text-sm">Our
+                            Services</a>
+                        <a href="" class="text-gray-500 block mt-4 hover:text-white hover:underline text-sm">Contact</a>
+                        <a href="" class="text-gray-500 block mt-4 hover:text-white hover:underline text-sm">Careers</a>
+                        <a href="" class="text-gray-500 block mt-4 hover:text-white hover:underline text-sm">FAQs</a>
+                        <a href="" class="text-gray-500 block mt-4 hover:text-white hover:underline text-sm">Offices for
+                            Rent</a>
+                    </div>
+                    <div>
+                        <h3 class="mt-5 text-lg font-bold">Discovery</h3>
+                        <a href="" class="text-gray-500 block mt-4 hover:text-white hover:underline text-sm">Chicago</a>
+                        <a href="" class="text-gray-500 block mt-4 hover:text-white hover:underline text-sm">Los
+                            Angeles</a>
+                        <a href="" class="text-gray-500 block mt-4 hover:text-white hover:underline text-sm">New
+                            Jersey</a>
+                        <a href="" class="text-gray-500 block mt-4 hover:text-white hover:underline text-sm">New
+                            York</a>
+                        <a href=""
+                            class="text-gray-500 block mt-4 hover:text-white hover:underline text-sm">California</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-between flex-wrap border-t py-5 border-slate-600">
+            <span class="block text-sm text-gray-400">© BharaHobe.com – All rights reserved</span>
+            <ul class="flex w-36 justify-between flex-wrap text-sm text-gray-400">
+                <li><a href="#">Privacy</a></li>
+                <li class="list-disc"><a href="#" class="pl-3">Terms</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>

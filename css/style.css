@@ -101,6 +101,10 @@ footer .subscribe {
     background-color: #F7F7F7;
 }
 
+.about-inner:hover>img {
+    background: #e25858;
+}
+
 footer .subscribe input:focus {
     border: none;
     outline: none;
